@@ -1,0 +1,32 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  plugins:
+    - custom_lint
+  exclude: [
+      lib/**.g.dart
+    ] #예외처리
+
+  ## ignore(무시) - 안뜸,
+  ## info(정보) - 파란색으로 콘솔 표시됨,
+  ## warning(경고) - 노란색으로 콘솔 표시,
+  ## error(오류) - 빨간색 x 표시(실행안됨)
+
+  errors:
+    invalid_assignment: warning
+    missing_return: error
+    dead_code: warning
+    avoid_print: error
+    todo: info
+
+linter:
+  rules:
+    avoid_print: false
+    depend_on_referenced_packages: false
+    unnecessary_this: false
+
+custom_lint:
+  enable_all_lint_rules: false
+  rules:
+    # You can now enable one specific rule in the "rules" list
+    - missing_provider_scope
